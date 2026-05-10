@@ -1,0 +1,8 @@
+﻿Compilation Status
+Generated: 2026-05-08T13:03:56
+
+Compilation attempted: no
+Reason: no Java ME MIDP 2.0 / CLDC 1.1 SDK or equivalent javax.microedition classpath was present in the local environment.
+Local environment note: java, javac, and javap were not initially on PATH; a temporary Temurin JRE 21.0.11 was used only to run CFR 0.152.
+Expected classpath for a future compile attempt: CLDC-1.1 + MIDP-2.0 APIs, plus src/ as source path and res/ packaged as JAR resources.
+Generated source sanity: see build/source_sanity.json.

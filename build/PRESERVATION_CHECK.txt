@@ -1,0 +1,10 @@
+﻿Preservation Check
+Generated: 2026-05-08T13:03:45
+
+Input total files: 219
+Original copy total files: 219
+Input non-class resources: 214
+res/ resources: 214
+
+original/sonicjar hash/size/path match: PASS
+res/ non-class resource hash/size/path match: PASS

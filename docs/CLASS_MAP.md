@@ -1,0 +1,1601 @@
+# Class Map
+
+Confirmed metadata comes from the original `.class` files. Interpretive purpose and relationships are reconstruction notes.
+
+## DistantBg
+
+- Source file: `src/DistantBg.java`
+- Original class file: `original/sonicjar/DistantBg.class`
+- Access: `public final`
+- Class file version: `46.0 (Java 1.2)`
+- Superclass: `java.lang.Object`
+- Interfaces: `(none)`
+- Suspected purpose: Parallax/distant-background renderer. It selects table data per zone/stage and draws regions from MainCanvas.m_imgMimg using DistantBgTbl1 and DistantBgTbl2 arrays.
+- Confidence level: `High`
+
+### Fields
+
+- `static final int ANCHOR`
+- `static final int DISP_W`
+- `static final int DISP_H`
+- `static final int DISP_OY`
+- `static final int DISP_WP`
+- `static javax.microedition.lcdui.Graphics g`
+- `static int stageNo`
+- `static int zoneNo`
+- `static int workX`
+- `static int workY`
+- `public static final int[] box`
+
+### Constructors
+
+- `public DistantBg()`
+
+### Methods
+
+- `public static final void setStage(int arg0, int arg1)`
+- `public static final void paint(int arg0, int arg1)`
+- `private static final void paintS0(int arg0, int arg1)`
+- `private static final void paintS1(int arg0, int arg1)`
+- `private static final void paintS2(int arg0, int arg1)`
+- `private static final void paintS3(int arg0, int arg1)`
+- `private static final void drawParts(int[] arg0, int arg1, int arg2)`
+- `public static final void drawPartsSub(int[] arg0, int arg1)`
+- `private static final boolean setClip(int arg0, int arg1, int arg2)`
+- `private static final boolean chkBox(int arg0, int arg1, int arg2)`
+- `static initializer`
+
+### Called Resources, If Identifiable
+
+- `(none directly identified)`
+
+### Relationships To Other Classes
+
+- references local classes: DistantBgTbl1, DistantBgTbl2, MainCanvas
+- External API/class references: `java.lang.Object`, `javax.microedition.lcdui.Graphics`
+
+## DistantBgTbl1
+
+- Source file: `src/DistantBgTbl1.java`
+- Original class file: `original/sonicjar/DistantBgTbl1.class`
+- Access: `public final`
+- Class file version: `46.0 (Java 1.2)`
+- Superclass: `java.lang.Object`
+- Interfaces: `(none)`
+- Suspected purpose: Static integer table holder for distant background draw commands used by DistantBg.
+- Confidence level: `Medium-high`
+
+### Fields
+
+- `public static final int[] data0`
+- `public static final int[] data1`
+- `public static final int[] data2`
+- `public static final int[] data3`
+- `public static final int[] data4`
+- `public static final int[] data5`
+- `public static final int[] data6`
+- `public static final int[] data7`
+- `public static final int[] data8`
+- `public static final int[] data9`
+- `public static final int[] data10`
+- `public static final int[] data11`
+
+### Constructors
+
+- `public DistantBgTbl1()`
+
+### Methods
+
+- `static initializer`
+
+### Called Resources, If Identifiable
+
+- `(none directly identified)`
+
+### Relationships To Other Classes
+
+- no direct local-class relationship beyond java.lang.Object
+- External API/class references: `java.lang.Object`
+
+## DistantBgTbl2
+
+- Source file: `src/DistantBgTbl2.java`
+- Original class file: `original/sonicjar/DistantBgTbl2.class`
+- Access: `public final`
+- Class file version: `46.0 (Java 1.2)`
+- Superclass: `java.lang.Object`
+- Interfaces: `(none)`
+- Suspected purpose: Second static integer table holder for distant background draw commands used by DistantBg.
+- Confidence level: `Medium-high`
+
+### Fields
+
+- `public static final int[] data12`
+- `public static final int[] data13`
+- `public static final int[] data14`
+- `public static final int[] data15`
+- `public static final int[] data16`
+- `public static final int[] data17`
+- `public static final int[] data18`
+- `public static final int[] data19`
+
+### Constructors
+
+- `public DistantBgTbl2()`
+
+### Methods
+
+- `static initializer`
+
+### Called Resources, If Identifiable
+
+- `(none directly identified)`
+
+### Relationships To Other Classes
+
+- no direct local-class relationship beyond java.lang.Object
+- External API/class references: `java.lang.Object`
+
+## MainCanvas
+
+- Source file: `src/MainCanvas.java`
+- Original class file: `original/sonicjar/MainCanvas.class`
+- Access: `public`
+- Class file version: `46.0 (Java 1.2)`
+- Superclass: `javax.microedition.lcdui.game.GameCanvas`
+- Interfaces: `javax.microedition.lcdui.CommandListener, javax.microedition.media.PlayerListener, java.lang.Runnable`
+- Suspected purpose: Primary MIDP GameCanvas. It owns the game loop, input, rendering, state transitions, resource loading, RMS persistence, audio playback, stage/map loading, collision tables, and most gameplay object logic.
+- Confidence level: `High`
+
+### Fields
+
+- `public static boolean moveRsm`
+- `public static boolean drawRsm`
+- `public static boolean loopMode`
+- `public static boolean noloop`
+- `public static boolean loopOut1`
+- `public static boolean loopOut2`
+- `public static final boolean EmuOn`
+- `private static final boolean DebugPutOn`
+- `private static final boolean DebugCommandOn`
+- `private static java.io.DataOutputStream out`
+- `private static java.io.InputStream in`
+- `private static java.io.DataInputStream indata`
+- `public java.util.Random rnd`
+- `private static sonic h`
+- `private static javax.microedition.rms.RecordStore record`
+- `private static javax.microedition.lcdui.Font f`
+- `public static javax.microedition.lcdui.Graphics gg`
+- `private static int[][] ObjectList`
+- `private static int ObjectListNum`
+- `private static boolean[] ObjectAct`
+- `private static boolean[] ObjectDead`
+- `private javax.microedition.lcdui.Image[] m_imgCmd`
+- `public static javax.microedition.lcdui.Image m_imgMimg`
+- `private javax.microedition.lcdui.Image[] m_imgObj`
+- `private static boolean keyBreak`
+- `private static boolean DrawFlag`
+- `private static boolean[] KeyEvent`
+- `private static boolean[] KeyPress`
+- `private static boolean debugFlag`
+- `private static int TIME_WAIT`
+- `private static int XNUM`
+- `private static int MODE_SELECT_DATAFOLDER`
+- `private static int MODE_DEBUGPRINT2`
+- `private static int MODE_CONNINIT`
+- `private static int MODE_DEBUGPRINT`
+- `private static int MODE_CONNECT_FAILED`
+- `private static int MODE_INIT`
+- `private static int MODE_TITLE`
+- `private static int MODE_FIELD`
+- `private static int MODE_STAGESELECT`
+- `private static int MODE_STARTSTAGE`
+- `private static int MODE_CLEARSTAGE`
+- `private static int MODE_CONTINUE`
+- `private static int MODE_OPTION`
+- `public int zoneNumber`
+- `public int stageNumber`
+- `public int selectZoneNumber`
+- `public int selectStageNumber`
+- `public int animeTimer`
+- `public int cpuTimer`
+- `private static int plmaxspd`
+- `private static int pladdspd`
+- `private static int plretspd`
+- `private static int plstaspd`
+- `private static int gravity`
+- `private static int pljump`
+- `private static int pljump_w`
+- `private static int[] plspeed`
+- `private static int[] ploldpos`
+- `private static int falltimer`
+- `private static int nocoltimer`
+- `private static int kokyutimer`
+- `private static int noloopchecktimer`
+- `private static int olddir`
+- `private static int olddir2`
+- `private static int mutekicount`
+- `private static int muteki2count`
+- `private static int speedupcount`
+- `private static int bariacount`
+- `private static int oldringcount`
+- `private static int ringcount`
+- `private static int scorecount`
+- `private static int timecount`
+- `private static int timecount2`
+- `private static int diecount`
+- `private static int playercount`
+- `private static int plsaveX`
+- `private static int plsaveY`
+- `private static int plsaveTime`
+- `private static int plsaveTime2`
+- `private static int[] objectData`
+- `private static int OBJA_MAX`
+- `private static int[][] objAwaData`
+- `private static int[][] objData`
+- `private static boolean initDisplay`
+- `private static boolean readStageObjectFlag`
+- `private static boolean raidOn`
+- `private static boolean[] switchflag`
+- `private static int raidObjectNum`
+- `private static int raidObjectNumSub`
+- `private static int PlayerH`
+- `private static int SONIC_N`
+- `private static int SONIC_S`
+- `private static int LOGO`
+- `private static int LOGOLINE`
+- `private static int SYSTXT`
+- `private static int WINDOW_RING`
+- `private static int WINDOW_TIME`
+- `private static int WINDOW_ZANKI`
+- `private static int WINDOU_SUUJI`
+- `private static int SYSSCORE`
+- `private static int SYSTXT2`
+- `private static int T_CUR1`
+- `private static int T_CUR2`
+- `private static int GAMEOVER`
+- `private static int TIMEOVER`
+- `private static int RING`
+- `private static int RING1`
+- `private static int SJUMP`
+- `private static int BURANKO`
+- `private static int HASHI`
+- `private static int TOGE_HASHI`
+- `private static int BREAK`
+- `private static int YUKA`
+- `private static int TURI`
+- `private static int TOGE`
+- `private static int BOX`
+- `private static int FBLOCK`
+- `private static int DAI`
+- `private static int YOGAN`
+- `private static int SWITCH2`
+- `private static int SHIMA`
+- `private static int DAI2`
+- `private static int BRKABE`
+- `private static int PEDAL`
+- `private static int BREAK2`
+- `private static int STEP`
+- `private static int FUN`
+- `private static int SISOO`
+- `private static int BELT`
+- `private static int PATA`
+- `private static int FIRE6`
+- `private static int SWITCH2_`
+- `private static int MAWARU`
+- `private static int YUKAI`
+- `private static int DOOR`
+- `private static int YUKAE`
+- `private static int DAI4`
+- `private static int ELE`
+- `private static int BELTC`
+- `private static int NOKO`
+- `private static final int RING_SFLAG_RING_18_00`
+- `private static final int RING_SFLAG_RING_00_18`
+- `private static final int SJUMP_NFLAG`
+- `private static final int BURANKO_NFLAG`
+- `private static final int THASHI_NFLAG`
+- `private static final int HASHI_NFLAG`
+- `private static final int BREAK_SFLAG`
+- `private static final int YUKA_NFLAG`
+- `private static final int TURI_NFLAG`
+- `private static final int TOGE_NFLAG`
+- `private static final int BOX_SFLAG`
+- `private static final int FBLOCK_NFLAG`
+- `private static final int DAI_NFLAG`
+- `private static final int YOGAN2_SFLAG`
+- `private static final int MYOGAN_NFLAG`
+- `private static final int SWITCH2_NFLAG`
+- `private static final int SHIMA_NFLAG`
+- `private static final int DAI2_NFLAG`
+- `private static final int BRKABE_SFLAG`
+- `private static final int PEDAL_NFLAG`
+- `private static final int BREAK2_NFLAG`
+- `private static final int STEP_NFLAG`
+- `private static final int FUN_NFLAG`
+- `private static final int SISOO_NFLAG`
+- `private static final int BELT_NFLAG`
+- `private static final int PATA_NFLAG`
+- `private static final int FIRE6_NFLAG`
+- `private static final int BRYUKA_NFLAG`
+- `private static final int MAWARU_NFLAG`
+- `private static final int YUKAI_NFLAG`
+- `private static final int DOOR_NFLAG`
+- `private static final int YUKAE_NFLAG`
+- `private static final int DAI4_NFLAG`
+- `private static final int ELE_NFLAG`
+- `private static final int BELTC_NFLAG`
+- `private static final int NOKO_NFLAG`
+- `private static final int SAVE_SFLAG`
+- `private static final int KAGEB_NFLAG`
+- `private static final int BGSPR_NFLAG`
+- `private static final int KAMERE_SFLAG`
+- `private static final int HACHI_SFLAG`
+- `private static final int MUSI_SFLAG`
+- `private static final int ITEM_NFLAG`
+- `private static final int ITEM_SFLAG`
+- `private static final int GOLE_NFLAG`
+- `private static final int BTEN_NFLAG`
+- `private static final int BTEN_SFLAG`
+- `private static final int BIGRING_NFLAG`
+- `private static final int SCOLI_NFLAG`
+- `private static final int IMO_SFLAG`
+- `private static final int BROBO_SFLAG`
+- `private static final int BUTA_SFLAG`
+- `private static final int HAGURUMA_NFLAG`
+- `private static final int SHOOTER_NFLAG`
+- `private static final int DAINFLA`
+- `private static final int MASIN_NFLAG`
+- `private static final int BOBIN_SFLAG`
+- `private static final int KANI_SFLAG`
+- `private static final int JYAMA_NFLAG`
+- `private static final int FETAMA_NFLAG`
+- `private static final int TEKYU_NFLAG`
+- `private static final int SIGNAL_NFLAG`
+- `private static final int DAI2_SFLAG`
+- `private static final int RING_SFLAG_RING_M10_10`
+- `private static final int RING_SFLAG_RING_10_10`
+- `private static final int RING_SFLAG_RING_20_20`
+- `private static final int RING_SFLAG_RING_10_00`
+- `private static final int RING_SFLAG_RING_20_00`
+- `private static final int RING_SFLAG_RING_00_10`
+- `private static final int RING_SFLAG_RING_00_20`
+- `private static final int ARUMA_SFLAG`
+- `private static final int YADO_SFLAG`
+- `private static final int ELEV_NFLAG_80`
+- `private static final int ELEV_NFLAG`
+- `private static final int UNI_SFLAG`
+- `private static final int MFIRE_NFLAG`
+- `private static final int HASHIRA_NFLAG`
+- `private static final int YOGANC_NFLAG`
+- `private static final int BAT_SFLAG`
+- `private static final int OCHI_NFLAG`
+- `private static final int YARI_SFLAG`
+- `private static final int MOGURA_SFLAG`
+- `private static final int KAZARI_SFLAG`
+- `private static final int DAI3_NFLAG`
+- `private static final int MIZU_NFLAG`
+- `private static final int AWA_NFLAG`
+- `private static final int FISH_SFLAG`
+- `private static final int FISH2_SFLAG`
+- `private static final int KASSYA_NFLAG`
+- `private static final int TAKI_NFLAG`
+- `private static final int SHIMA2_NFLAG`
+- `private static final int BOU_NFLAG`
+- `private static final int BEN_NFLAG`
+- `private static final int BEN_SFLAG`
+- `private static final int TURI2`
+- `private static final int TURI3`
+- `private static final int TAMA`
+- `private static final int BAKUHATU`
+- `private static final int MYOGAN2`
+- `private static final int YOGAN2`
+- `private static final int ANIMAL`
+- `private static final int _FIRE`
+- `private static final int BLOCK`
+- `private static final int OBJAWA`
+- `private static final int DAI3_0x27`
+- `private static final int DAI3_0x13`
+- `private static final int DAI2_0xE0`
+- `private static final int DAI2_0xF0`
+- `private static final int EFFECT`
+- `private static final int MIZU_0x09`
+- `private static final int WATER2`
+- `private static final int BOSS1`
+- `private static final int BOSS2`
+- `private static final int BOSS3`
+- `private static final int BOSS4`
+- `private static final int BOSS5`
+- `private static final int BOSS6`
+- `private static final int BOSS5BLOCK`
+- `private static int[] objectDrawList`
+- `private static int objectDrawCount`
+- `private static int MapW`
+- `private static int MapH`
+- `private static int mode`
+- `private static int BossFirst`
+- `private static int Target`
+- `private static int connCount`
+- `private static int connPos`
+- `private static int comSel`
+- `private static int Window`
+- `private static int[] mapOxy`
+- `private static int[] oldMapOxy`
+- `private static int[] mapView`
+- `private static int[] mapViewTarget`
+- `private static int[] mapOfs`
+- `private static int[] mapOfsTarget`
+- `private static byte[] mapData`
+- `private static byte[] mapFrontData`
+- `private static byte[] blockLinkTable`
+- `private static byte[] blockColTable`
+- `private static byte[][] zoneActTable`
+- `private static int[] zoneActTable2`
+- `private static byte[][] tempWorldMapData`
+- `private static final byte[][][][] worldMapData`
+- `private static byte[] scddirtbl`
+- `private static boolean pauseGame`
+- `private static int[] PlayerParam`
+- `private static boolean PlayerSJump`
+- `private static boolean PlayerDamage`
+- `private static boolean PlayerWater`
+- `private static boolean PlayerSWater`
+- `private static boolean PlayerBou`
+- `private static boolean PlayerJump`
+- `private static boolean PlayerAir`
+- `private static boolean PlayerBall`
+- `private static boolean PlayerDie`
+- `private static boolean PlayerCrouch`
+- `private static boolean PlayerLookUp`
+- `private static boolean PlayerNoCol`
+- `private static boolean PlayerNoCtrl`
+- `private static boolean TimerClear`
+- `private static boolean TimerStop`
+- `private static boolean PlayerDush`
+- `private boolean[] crushing`
+- `private static final int[] sinData`
+- `private static byte[] scdtblwk`
+- `private static int FontPos`
+- `private static long getTime2`
+- `private static int MapEndCounter`
+- `private static boolean bossModeOn`
+- `private static boolean bossBreakOn`
+- `private static short[][] objectSizeTbl`
+- `private static int TRANS_NONE`
+- `private static int TRANS_ROT90`
+- `private static int TRANS_ROT180`
+- `private static int TRANS_ROT270`
+- `private static int TRANS_MIRROR`
+- `private static int TRANS_MIRROR_ROT90`
+- `private static int TRANS_MIRROR_ROT180`
+- `private static int TRANS_MIRROR_ROT270`
+- `public static final int[] rotNumTable`
+- `static final int[][] encZoneNumber`
+- `static final int[][] encStageNumber`
+- `private static int cutDrawVLine`
+- `package-private int displayOffsetY`
+- `package-private int displayOffsetY2`
+- `private byte resumeStage`
+- `private byte resumeZanki`
+- `private int resumeScore`
+- `private byte clearStageData`
+- `public int MODE_FIELD_PAUSE`
+- `public int pauseTimer`
+- `public int pauseSelect`
+- `package-private byte[] oldm_nConfigValue`
+- `public static java.lang.String[] softKeys`
+- `package-private boolean SetSoftFlag`
+- `package-private int SetSoftCount`
+- `package-private int drawRsmCount`
+- `package-private int wipeCount`
+- `package-private boolean outWipe`
+- `package-private boolean putWipe`
+- `package-private boolean playerDraw`
+- `private byte[] imageOffset`
+- `private byte[] rot`
+- `private byte[] hitChk`
+- `private byte[] hitChk2`
+- `private int[][][] drawMapData`
+- `package-private boolean drawRingFlag`
+- `package-private boolean drawTimeFlag`
+- `package-private boolean drawZankiFlag`
+- `package-private int oldRingCount`
+- `package-private int oldScoreCount`
+- `package-private int oldTimeCount`
+- `package-private int oldZankiCount`
+- `package-private int[][] kyuryuTable`
+- `private boolean goleFlag`
+- `private int golecount`
+- `private int scoreGetcount`
+- `private int scoreGetcountMax`
+- `private int SysStringMax`
+- `private int[][] SysString`
+- `private int SysCenter`
+- `private int SysCount`
+- `private int GREEN_HILL`
+- `private int FINAL`
+- `private int MARBLE`
+- `private int ZONE`
+- `private int ACT1`
+- `private int ACT2`
+- `private int ACT3`
+- `private int SPRING_YARD`
+- `private int ACT`
+- `private int SCRAP_BRAIN`
+- `private int DAEN_B`
+- `private int STAR_LIGHT`
+- `private int LABYRINTH`
+- `private int DAEN_Y`
+- `private int SONIC_HAS`
+- `private int PASSED`
+- `private int SPECIAL_STAGE`
+- `private int CHAOS_EMERALDS`
+- `package-private int[][] SystxtTable`
+- `package-private int[] zonetable`
+- `public boolean scoreMoveFlag`
+- `public boolean limitBreak`
+- `public int resultRing`
+- `public int resultTime`
+- `package-private int blockColCount`
+- `package-private int enemyBlock`
+- `public int pushCount`
+- `public int bressCount`
+- `public int CrouchCount`
+- `public int LookUpCount`
+- `package-private boolean rhit`
+- `package-private boolean lhit`
+- `package-private int PlayerW`
+- `package-private boolean playdamageYogan`
+- `package-private int offSetPos`
+- `package-private int[][][] limitTable`
+- `public byte m_bScrollLock`
+- `public short[][] m_aaScrollLockPos`
+- `package-private int[] poslimit`
+- `package-private int nofcolTimer`
+- `public boolean damageNow`
+- `public int damageMoveTimer`
+- `public boolean PlayerSub`
+- `package-private boolean bressDie`
+- `package-private boolean timeUpDie`
+- `package-private boolean noTimeScore`
+- `private static boolean OttotoOn`
+- `private static int OttotoSide`
+- `private static int raidObjectW`
+- `private static int raidObjectX`
+- `public int playerStandCount`
+- `private boolean bressMusic`
+- `package-private int objChkPoint`
+- `package-private int objChkNum`
+- `package-private int m_objMaxObject`
+- `package-private boolean ChkVecR`
+- `package-private boolean ChkVecL`
+- `package-private int LSize`
+- `package-private int RSize`
+- `private static int[] m_aAddObjectData`
+- `package-private int noDataPointer`
+- `package-private int listSub`
+- `package-private int[][] objTempData`
+- `package-private int objCount`
+- `package-private boolean[] setDrawFlag`
+- `private int waterH`
+- `private int waterH2`
+- `private int waterH3`
+- `private byte water_flag`
+- `private byte water_flag2`
+- `private byte water_flag3`
+- `private byte water_flag4`
+- `package-private int noLeverTimer`
+- `package-private int[] awasintlb`
+- `package-private int[] awaSize`
+- `package-private int[] awaPos`
+- `public boolean endingModeOn`
+- `private static byte LANGUAGE_MAX`
+- `private static byte TITLE_MODE_LICENSE_SEGA`
+- `private static byte TITLE_MODE_LICENSE_SONICTEAM`
+- `private static byte TITLE_MODE_FIRST_SETUP`
+- `private static byte TITLE_MODE_TITLE`
+- `private static byte TITLE_MODE_TITLE_MENU`
+- `private static byte TITLE_MODE_TITLE_RANCKING`
+- `private static byte TITLE_MODE_TITLE_RANCKING_MENU`
+- `private static byte TITLE_MODE_TITLE_RANCKING_DEL`
+- `private static byte TITLE_MODE_TITLE_CONFIG_MENU`
+- `private static byte TITLE_MODE_TITLE_CONTINUE_MENU`
+- `private static byte TITLE_MODE_TITLE_HOWTO`
+- `private static byte m_nTitleMode`
+- `private static byte m_nPattern`
+- `private static byte m_nRingPattern`
+- `private static byte m_nSel`
+- `private static byte m_bDraw`
+- `private static byte m_bFirstSetUp`
+- `private static byte m_nTimer`
+- `private static byte[] m_nConfigValue`
+- `private static byte[] m_HowToPicIndexTbl`
+- `private static byte[][] m_aConfigTextOffset`
+- `private static javax.microedition.lcdui.Command[] cmd`
+- `private static int m_nMarqueePos`
+- `private static int m_nOnKey`
+- `private static int m_nPushedKey`
+- `private static int m_nLastKey`
+- `private static int[] m_nHiScore`
+- `private static int[] m_nDifficulty`
+- `private static boolean[] m_OnKeyFlag`
+- `private static javax.microedition.lcdui.Image[] m_imgImage`
+- `private static javax.microedition.lcdui.Font m_Font`
+- `private static short[][] m_HowToPicTbl`
+- `private static java.lang.String[] m_strText`
+- `private static java.lang.String[] m_strHowToText`
+- `private static java.lang.String[] m_strMusicComposed`
+- `private static java.lang.String m_strMarquee`
+- `private int MarqOfs`
+- `private static final int LocalType`
+- `private static int comboScore`
+- `private boolean isObj2Debug`
+- `private static int[][] obj2Data`
+- `private static final int OBJ2_MAX`
+- `private static final int OBJ2_BAKUHATU`
+- `private static final int OBJ2_KEMURI`
+- `private static final int OBJ2_BAKUDAN`
+- `private static final int OBJ2_RING`
+- `private static final int OBJ2_KIRA`
+- `private static final int OBJ2_SCORE`
+- `private static final int OBJ2_TAMA`
+- `private static final int OBJ2_HACHI_TAMA`
+- `private static final int OBJ2_KANI_TAMA`
+- `private static final int OBJ2_BUTA_TAMA`
+- `private static final int OBJ2_UNI_TAMA`
+- `private static final int OBJ2_UNI2_TAMA`
+- `private static final int OBJ2_BROBO_TAMA`
+- `private static final int OBJ2_IMO_TAMA`
+- `private static final int OBJ2_MUSI_KEMURI`
+- `private static final int OBJ2_FIREBALL`
+- `private static final int OBJ2_FIREBALL2`
+- `private static final int OBJ2_FIREBALL3`
+- `private static final int OBJ2_FIREBALL4`
+- `private static final int OBJ2_FIREBALL5`
+- `private static final int OBJ2_KAZARIFIRE`
+- `private static final int OBJ2_DBLOCK`
+- `private static final int OBJ2_DBLOCK2`
+- `private static final int OBJ2_DBLOCK3`
+- `private static final int OBJ2_DBLOCK4`
+- `private static final int OBJ2_BRKABE_G`
+- `private static final int OBJ2_BOSS6_TAMA`
+- `private static final int OBJ2_FRIC`
+- `private static final int OBJ2_AZARASI`
+- `private static final int OBJ2_NIWATORI`
+- `private static final int OBJ2_USAGI`
+- `private static final int OBJ2_PENGUIN`
+- `private static final int OBJ2_RISU`
+- `private static final int OBJ2_BUTA`
+- `private static final int OBJ2_DEBUG`
+- `private boolean putNowLoading`
+- `private javax.microedition.lcdui.Display display`
+- `private int mapViewType`
+- `private int mapViewTypeTemp`
+- `private int mapViewCount`
+- `private int mapViewPri`
+- `private volatile java.io.InputStream is1`
+- `private volatile javax.microedition.media.Player player1`
+- `private static volatile boolean bPauseMusic`
+- `private static volatile boolean bGoalMusic`
+- `private static volatile int musicCount`
+- `private static volatile int musicRetry`
+- `private static volatile int musicRequest`
+- `private static volatile int musicNum`
+- `private volatile boolean bDoPlay`
+- `private static final int MusicRetryInterval`
+- `private static final byte[][] friendTbl`
+- `private static final byte[] sisootbl`
+- `private static final int KaniAttackCount`
+- `private static final int ArumaRunCount`
+- `private static final int ArumaSpeedX`
+- `private static final int ArumaSpeedY`
+- `private static final int ArumaStartOffsetX`
+- `private static final byte[] batAnimTbl`
+- `private static final short[][] RectTblKamere`
+- `private static final short[][] RectTblHachi`
+- `private static final short[][] RectTblMusi`
+- `private static final short[][] RectTblImo`
+- `private static final short[][] RectTblBrobo`
+- `private static final short[][] RectTblButa`
+- `private static final short[][] RectTblKani`
+- `private static final short[][] RectTblAruma`
+- `private static final short[][] RectTblYado`
+- `private static final short[][] RectTblUni`
+- `private static final short[][] RectTblBat`
+- `private static final short[][] RectTblMogura`
+- `private static final short[][] RectTblFish`
+- `private static final short[][] RectTblFish2`
+- `private static final byte[] Boss6TamaAnmTbl`
+- `private static final byte[] Boss6TamaAnmTbl2`
+- `private static final byte[] Boss6TamaAnmTbl3`
+- `private static final short[][] RectTblBakuhatu`
+- `private static final short[][] RectTblKemuri`
+- `private static final short[][] RectTblTama`
+- `private static final short[][] RectTblDBlock`
+- `private static final short[][] RectTblBoss6Tama`
+- `private short[][] MoveAnimalTbl`
+- `private short[][] RectAnimalTbl`
+- `private int bossType`
+- `private int bossStep`
+- `private int bossAnim`
+- `private int bossDir`
+- `private int bossAngle`
+- `private int bossAngle2`
+- `private int bossParam1`
+- `private int bossParam2`
+- `private int bossPosX`
+- `private int bossPosY`
+- `private int bossOfsX`
+- `private int bossOfsY`
+- `private int bossOriginX`
+- `private int bossOriginY`
+- `private int bossCount`
+- `private int bossFrame`
+- `private int bossFlash`
+- `private int bossStopCount`
+- `private int bossFace`
+- `private int bossFaceCount`
+- `private int bossHP`
+- `private static final int[] BossDeadLimitY`
+- `private static final int Boss1MoveWidth`
+- `private static final int Boss1Speed`
+- `private static final int Boss1FurikoSpeed`
+- `private static int boss1BallPosX`
+- `private static int boss1BallPosY`
+- `private static boolean boss1BallOn`
+- `private static final int[][] boss2MoveTbl`
+- `private static final int boss3AttackWidth`
+- `private static final int boss3SpeedX`
+- `private static final int boss3DownSpeed`
+- `private static final int boss3FloatSpeed`
+- `private static final int boss3AttackWait`
+- `private static int boss3FireCount`
+- `private static short[][] boss4Sisoo`
+- `private static final int Boss4SisooOfs`
+- `private static final int Boss4ShootWait`
+- `private static final int Boss4Speed`
+- `private static final int Boss4HighPos`
+- `private static final int Boss4LowPos`
+- `private static final int Boss4BakuhatuCount`
+- `private static short[][] boss5Block`
+- `static final int Boss5BlockLine`
+- `private static final int boss5AttackWidth`
+- `private static final int boss5Speed`
+- `private static int boss5AttackCount`
+- `private static int[] boss6Piston`
+- `private static int[][] boss6PistonXY`
+- `private static int boss6RideNum`
+- `private static int boss6PistonNum`
+- `private static int[] boss6TamaY`
+- `private static int boss6Lamp`
+- `private static int boss6Destroy`
+- `private static final short[][] boss6PistonPos`
+- `private static int nakaStep`
+- `private static int nakaLevel`
+- `private static int nakaCount`
+- `private static int endingEggStep`
+- `private static int endingEggAnim`
+- `private static int endingEggCount`
+- `private static final short[][] RectTblEndingB`
+- `private static int wipeCol`
+- `private static int wipeLevel`
+- `private static boolean wipeDir`
+- `private int endingStep`
+- `private int endingCount`
+- `private int endingAnim`
+- `private int endingType`
+- `private int endingLogoPosX`
+- `private int endingStringFadeLevel`
+- `private short[][] endingRectTbl`
+- `private short[][] RectBoss6LampTbll`
+- `private short[][] RectEggmanTbl`
+- `private short[][] RectBossTbl`
+- `private short[][] RectBoss2Tbl`
+- `private short[] RectBossBallTbl`
+- `private static int continueStep`
+- `private static int continueSonicPosX`
+- `private static int continueSonicPosY`
+- `private static int continueSonicAnim`
+- `private static int continueSonicAnim2`
+- `private static int continueCount`
+- `private static int continueResult`
+- `private static final int ContinueSonicCenterX`
+- `private static final int ContinueSonicBottomY`
+- `private static final short[][] ContinueSonicTbl`
+- `private static final short[][] ContinueSonicTbl2`
+- `package-private int[] break_sflag_ike_yuka`
+- `package-private int[][] yuka_nflag_ike_yuka`
+- `package-private int[] yuka_nflag_yuka_w`
+- `package-private int[] yuka_nflag_yuka_h`
+- `package-private int[] box_sflag_ike_def_X`
+- `package-private int[] box_sflag_ike_def_Y`
+- `package-private int[] box_sflag_ike_col_X`
+- `package-private int[] box_sflag_ike_col_Y`
+- `package-private int[] box_sflag_ike_box_V`
+- `private static boolean[] switchflag2`
+- `package-private int[] break2_nflag_ike_brockTable`
+- `package-private int[] break2_nflag_ike_brockTimeTable`
+- `package-private int[] fire6_nflag_ike_posTable`
+- `package-private int[] fire6_nflag_ike_sizeTable`
+- `package-private int[] fire6_nflag_ike_sizeTable2`
+- `package-private int[] mawaru_nflag_ike_posx`
+- `package-private int[] mawaru_nflag_ike_posy`
+- `package-private int[][] ele_nflag_ike_anime`
+- `package-private int[][] beltc_nflag_ike_objectPos`
+- `package-private int[] beltc_nflag_ike_defx`
+- `package-private int[] beltc_nflag_ike_defy`
+- `package-private int[] beltc_nflag_ike_startPos`
+- `package-private int[] beltc_nflag_ike_endPos`
+- `package-private boolean gole_on`
+- `package-private int[] bten_nflag_ike_score`
+- `package-private int[][] shooter_nflag_ike_objectPos`
+- `package-private int[] shooter_nflag_ike_pos`
+- `package-private int[] masin_nflag_ike_x`
+- `package-private int[] masin_nflag_ike_y`
+- `package-private int[] yari_sflag_ike_PosTable`
+- `private static int[][] kassya_x`
+- `private static int[][] kassya_y`
+- `package-private int[][] kassya_nflag_ike_objectPos`
+- `package-private int[][] kassya_nflag_ike_defX`
+- `package-private int[][] kassya_nflag_ike_defY`
+- `package-private int[] myogan_nflag_ike_ani`
+- `package-private int[][] step_nflag_ike_gura`
+- `package-private int[] fire6_nflag_ike_animeTable`
+- `package-private int[][] fire6_nflag_ike_rotTable`
+- `package-private int[][] ele_nflag_ike_rotTable`
+- `package-private int[] item_nflag_ike_itemTable`
+- `package-private int[] gole_nflag_ike_rotTable`
+- `package-private int[] gole_nflag_ike_kiraTableX`
+- `package-private int[] gole_nflag_ike_kiraTableY`
+- `package-private int[] yoganc_nflag_ike_posY`
+- `package-private int[] yari_sflag_ike_drawPosTable`
+
+### Constructors
+
+- `package-private MainCanvas(sonic arg0)`
+
+### Methods
+
+- `private void crushingDeathChk()`
+- `public void keyPressed(int arg0)`
+- `public void keyReleased(int arg0)`
+- `public void clearKey()`
+- `public void initAll()`
+- `public void GameMain()`
+- `public void save_conf()`
+- `public void load_conf()`
+- `public void save_resu()`
+- `public void load_resu()`
+- `public void save_hisc()`
+- `public void load_hisc()`
+- `public void SetSoftLabel()`
+- `public boolean softKeyChk()`
+- `public void ProcessMain()`
+- `public void DG()`
+- `public void paint(javax.microedition.lcdui.Graphics arg0)`
+- `public void Draw()`
+- `public void drawField()`
+- `public void ObjImageClear()`
+- `public void StageDataTableClear()`
+- `public void scroll(javax.microedition.lcdui.Graphics arg0, int arg1, int arg2)`
+- `public boolean CheckSoftLabel(int arg0, java.lang.String arg1)`
+- `public void SetSoftLabel(int arg0, java.lang.String arg1)`
+- `public java.lang.String ZeroSup(int arg0, int arg1)`
+- `public java.lang.String ZeroSup(java.lang.String arg0, int arg1)`
+- `public boolean DrawWaterMap(int arg0, int arg1, int arg2, int arg3)`
+- `public void setMapData()`
+- `public void DrawMapRegion(int arg0, int arg1, int arg2, int arg3)`
+- `public void DrawMap(javax.microedition.lcdui.Graphics arg0)`
+- `public void DrawMap2(javax.microedition.lcdui.Graphics arg0)`
+- `public void DrawMap3(javax.microedition.lcdui.Graphics arg0)`
+- `public void DrawMap4(javax.microedition.lcdui.Graphics arg0)`
+- `public void drawHitMap()`
+- `public void drawChipPut(int arg0, int arg1, int arg2)`
+- `public void drawStringCenter(javax.microedition.lcdui.Graphics arg0, javax.microedition.lcdui.Font arg1, java.lang.String arg2, int arg3, int arg4, boolean arg5)`
+- `public void drawString(javax.microedition.lcdui.Graphics arg0, java.lang.String arg1, int arg2, int arg3)`
+- `public int dSin(int arg0)`
+- `public int dCos(int arg0)`
+- `private void addScoreCount(int arg0)`
+- `private void addScoreCount(int arg0, int arg1)`
+- `public void drawSystemData()`
+- `public void drawNumber(int arg0, int arg1, int arg2, int arg3)`
+- `private boolean kyuryuchk()`
+- `public void initGoleStart()`
+- `public void initStageStart()`
+- `public void drawNumber2(int arg0, int arg1, int arg2)`
+- `public void readStageObject()`
+- `public void countClear()`
+- `public void endStageStart()`
+- `public void initStage(int arg0)`
+- `public void LoadImages(int arg0)`
+- `public void playerAction()`
+- `public int rnd(int arg0)`
+- `public boolean blockColChk(int arg0, int arg1)`
+- `public boolean blockColChk2(int arg0, int arg1)`
+- `public boolean blockColChk_easy(int arg0, int arg1)`
+- `public boolean blockColChk_Enemy(int arg0, int arg1)`
+- `public int blockdirChk(int arg0)`
+- `public boolean rcol2()`
+- `public boolean lcol2()`
+- `public boolean rcol3()`
+- `public boolean lcol3()`
+- `public boolean rcol()`
+- `public boolean lcol()`
+- `public boolean hcol()`
+- `public boolean fcol(int arg0)`
+- `public void playerPushSet()`
+- `public void playerBressChk()`
+- `public boolean jumpchk(int arg0)`
+- `public boolean ballchk()`
+- `public boolean setPlayerPos()`
+- `private boolean fcol()`
+- `private boolean fcol_r()`
+- `private boolean fcol_l()`
+- `public boolean play00walk()`
+- `public void play00jump()`
+- `public boolean ball00walk()`
+- `public void ball00jump()`
+- `public void jumpmove()`
+- `public void playerTyakuchi(int arg0)`
+- `public void jumpcolchk()`
+- `public void levermove()`
+- `public void plwalk(int arg0)`
+- `public void blevermove()`
+- `public void plballwalk(int arg0)`
+- `public void keispd(int arg0)`
+- `public void limitchk(boolean arg0)`
+- `public int hlimitget()`
+- `public int zone1(byte arg0)`
+- `public int zone3(byte arg0)`
+- `public int zone4(byte arg0)`
+- `public int zone5(byte arg0)`
+- `public int zone6(byte arg0)`
+- `public void speedset(int arg0)`
+- `public boolean fallchk()`
+- `public int PlayerPosX()`
+- `public int PlayerPosY()`
+- `public void playdamageset()`
+- `public void playdamageset2()`
+- `public void playerDie()`
+- `public void checkDieCount()`
+- `public void playerRaidOn(int arg0)`
+- `public byte getPlayerArg2(int arg0, int arg1)`
+- `public int getPlayerArg(int arg0, int arg1)`
+- `public void drawPlayerImage(javax.microedition.lcdui.Graphics arg0)`
+- `private void setObjData(int arg0, int arg1, int arg2)`
+- `private void moveObjData()`
+- `private void drawObjData()`
+- `public void objectInit(int arg0)`
+- `public void addObjectChk()`
+- `public void addObjectSet(int arg0)`
+- `public void addObject(int[] arg0)`
+- `public boolean removeObjectChk(int[] arg0)`
+- `public boolean removeObjectChkDead(int[] arg0)`
+- `public void removeObject(int arg0)`
+- `public void InsertObject(int[] arg0, int arg1)`
+- `public int[][] searchObject(int arg0, int arg1)`
+- `public void objectAction()`
+- `public void CallObjectDraw()`
+- `public void CallObjectDrawFront()`
+- `public void loopchange()`
+- `public void waterMove()`
+- `public void pata_draw(int arg0)`
+- `public void drawRegion(javax.microedition.lcdui.Graphics arg0, javax.microedition.lcdui.Image arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9)`
+- `public void drawImage(javax.microedition.lcdui.Graphics arg0, javax.microedition.lcdui.Image arg1, int arg2, int arg3, int arg4)`
+- `public javax.microedition.lcdui.Image createImage(java.lang.String arg0)`
+- `public void getItem(int arg0)`
+- `public void CallObjectMove(int arg0)`
+- `public void CallObjectDraw(int arg0)`
+- `public int ObjectColChk(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11)`
+- `private void setRaidOnSize(int arg0, int arg1)`
+- `private void setHeadHit()`
+- `public int getPlayerH()`
+- `public int ObjectColChk2(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5)`
+- `public int ObjectColChkPl(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5)`
+- `public void sjump_nflag_move_sakaki(int arg0)`
+- `public void mizu_nflag_move_sakaki(int arg0)`
+- `public void awa_nflag_move_sakaki(int arg0)`
+- `public void objAwaData_set(int arg0, int arg1, int arg2)`
+- `public void objAwaData_move()`
+- `public void objAwaData_draw()`
+- `public void ben_nflag_move_sakaki(int arg0)`
+- `public void ben_sflag_move_sakaki(int arg0)`
+- `public void sjump_nflag_draw_sakaki(int arg0)`
+- `public void bgspr_nflag_draw_sakaki(int arg0)`
+- `public void jyama_nflag_draw_sakaki(int arg0)`
+- `public void signal_nflag_draw_sakaki(int arg0)`
+- `public void mizu_nflag_draw_sakaki(int arg0)`
+- `public void awa_nflag_draw_sakaki(int arg0)`
+- `public void ben_nflag_draw_sakaki(int arg0)`
+- `public void ben_sflag_draw_sakaki(int arg0)`
+- `public void resultContinue(boolean arg0)`
+- `public void setEnding()`
+- `public java.lang.String[] readStrings(java.lang.String arg0)`
+- `private void TK_TitleFactor()`
+- `private void TK_TitleDraw()`
+- `private void TK_DrawStringC(java.lang.String arg0, int arg1, int arg2, int arg3, int arg4)`
+- `private void TK_DrawBelt(boolean arg0, boolean arg1)`
+- `private void TK_DrawRing(int arg0, int arg1)`
+- `private void TK_SetMarquee(int arg0)`
+- `private void TK_SetMarquee(java.lang.String arg0)`
+- `private void TK_MoveMarquee()`
+- `private void TK_DrawMarqueeTop()`
+- `private void TK_DrawMarqueeBottom()`
+- `private void TK_DrawBg(boolean arg0)`
+- `private void TK_TitleInit(boolean arg0)`
+- `private void TK_LoadTextset()`
+- `public void SetSoftKey(int arg0)`
+- `public void commandAction(javax.microedition.lcdui.Command arg0, javax.microedition.lcdui.Displayable arg1)`
+- `private void Vibrate(int arg0)`
+- `private void StopVibrate(int arg0)`
+- `private void InitViewControl()`
+- `private void ForceViewControl(int arg0)`
+- `private void view_yuka(int arg0, int arg1, int arg2)`
+- `private void view_turi(int arg0, int arg1, int arg2)`
+- `private void view_fblock(int arg0, int arg1, int arg2)`
+- `private void view_dai_ride(int arg0, int arg1, int arg2)`
+- `private void view_box_ride(int arg0, int arg1, int arg2)`
+- `private void view_dai(int arg0, int arg1, int arg2)`
+- `private void view_box(int arg0, int arg1, int arg2)`
+- `private void ViewControl()`
+- `private void DoGc()`
+- `private void moveSysString()`
+- `private void drawSysString()`
+- `public void run()`
+- `private void ResetSound()`
+- `private void InitSound()`
+- `public void playerUpdate(javax.microedition.media.Player arg0, java.lang.String arg1, java.lang.Object arg2)`
+- `private boolean _playMusic(java.lang.String arg0, int arg1)`
+- `private void PlayMusic(int arg0)`
+- `private void PauseMusic()`
+- `private void RestartMusic()`
+- `private void StopMusic()`
+- `private void _setMusicVol(int arg0)`
+- `private void VolumeMusic()`
+- `private void MuteMusic(boolean arg0)`
+- `private int GetZoneBGMNum(boolean arg0)`
+- `private void PlayZoneBGM()`
+- `private void PlayZoneBGML()`
+- `private void AraiLoadStageImage(int arg0)`
+- `private boolean SaveRecordStore(byte[] arg0, java.lang.String arg1)`
+- `private void deleteRecordStore(java.lang.String arg0)`
+- `private byte[] LoadRecordStore(java.lang.String arg0)`
+- `private int GetDrawRot(int arg0)`
+- `private boolean _CharaDefault(int[] arg0)`
+- `private void AraiMoveStand(int[] arg0)`
+- `private void AraiMoveStand(int[] arg0, int arg1)`
+- `private void AraiDirChangeX(int[] arg0)`
+- `private int GetEnemyFloorY(int arg0, int arg1, int arg2)`
+- `private boolean CheckSlide(int arg0, int arg1, int arg2, int arg3, int arg4)`
+- `private boolean CheckSlideInverse(int arg0, int arg1, int arg2, int arg3, int arg4)`
+- `package-private boolean AraiCheckSlide(int[] arg0)`
+- `package-private boolean AraiCheckInside(int[] arg0, int arg1, int arg2)`
+- `private boolean IsFarDistance(int arg0, int arg1)`
+- `private boolean IsDistance(int arg0, int arg1, int arg2)`
+- `private boolean DebugNearCheck(int arg0, int arg1)`
+- `private int IsHitSonic(int arg0, int arg1, int arg2, int arg3, boolean arg4)`
+- `private boolean AraiCharaHitCheck(int[] arg0)`
+- `private void AraiMoveTest(int[] arg0)`
+- `private void sisoo_shot_tama(int arg0, int arg1)`
+- `private void sleep(int arg0)`
+- `private void sisoo_nflag_move_arai(int arg0)`
+- `private void kamere_sflag_move_arai(int arg0)`
+- `private void hachi_sflag_move_arai(int arg0)`
+- `private void musi_sflag_move_arai(int arg0)`
+- `private void imo_sflag_move_arai(int arg0)`
+- `private void brobo_sflag_move_arai(int arg0)`
+- `private void buta_sflag_move_arai(int arg0)`
+- `private void kani_sflag_move_arai(int arg0)`
+- `private void aruma_sflag_move_arai(int arg0)`
+- `private void yado_sflag_move_arai(int arg0)`
+- `private void uni_sflag_move_arai(int arg0)`
+- `private void bat_sflag_move_arai(int arg0)`
+- `private boolean AraiStand100x(int[] arg0, int arg1)`
+- `private void mogura_sflag_move_arai(int arg0)`
+- `private void fish_sflag_move_arai(int arg0)`
+- `private void fish2_sflag_move_arai(int arg0)`
+- `private void AraiDrawChara(int arg0, short[][] arg1, int arg2)`
+- `private void AraiDrawChara100x(int arg0, short[][] arg1, int arg2)`
+- `private void sisoo_nflag_draw_arai(int arg0)`
+- `private void kamere_sflag_draw_arai(int arg0)`
+- `private void hachi_sflag_draw_arai(int arg0)`
+- `private void musi_sflag_draw_arai(int arg0)`
+- `private void imo_sflag_draw_arai(int arg0)`
+- `private void brobo_sflag_draw_arai(int arg0)`
+- `private void buta_sflag_draw_arai(int arg0)`
+- `private void kani_sflag_draw_arai(int arg0)`
+- `private void aruma_sflag_draw_arai(int arg0)`
+- `private void yado_sflag_draw_arai(int arg0)`
+- `private void drawUniToge(int arg0, int arg1, int arg2)`
+- `private void uni_sflag_draw_arai(int arg0)`
+- `private void bat_sflag_draw_arai(int arg0)`
+- `private void ochi_nflag_draw_arai(int arg0)`
+- `private void yari_sflag_draw_arai(int arg0)`
+- `private void mogura_sflag_draw_arai(int arg0)`
+- `private void fish_sflag_draw_arai(int arg0)`
+- `private void fish2_sflag_draw_arai(int arg0)`
+- `private void AddObjectData(int arg0, int arg1, int arg2, int arg3, int arg4)`
+- `private void InitObj2()`
+- `private void ClearObj2()`
+- `private void SetObj2(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6)`
+- `private void SetObj2Ex(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8)`
+- `private void ShotObj2(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5)`
+- `private void ShotRing(int arg0, int arg1, int arg2)`
+- `private void ShotAnimal(int arg0, int arg1, int arg2)`
+- `private void ShotScore(int arg0, int arg1, int arg2)`
+- `private void ShotBomb(int arg0, int arg1)`
+- `private void DebugRect(int arg0, int arg1, int arg2, int arg3, int arg4)`
+- `private void DriveObj2()`
+- `private void CallObj2(int[] arg0)`
+- `private void DrawObj2()`
+- `private void MoveBakudan(int[] arg0)`
+- `private void MoveBakuhatu(int[] arg0)`
+- `private void MoveRing(int[] arg0)`
+- `private void MoveKira(int[] arg0)`
+- `private void MoveScore(int[] arg0)`
+- `private void MoveNormalTama(int[] arg0)`
+- `private void MoveHachiTama(int[] arg0)`
+- `private void MoveKaniTama(int[] arg0)`
+- `private void MoveButaTama(int[] arg0)`
+- `private void MoveBroboTama(int[] arg0)`
+- `private void MoveUniTama(int[] arg0)`
+- `private void MoveUni2Tama(int[] arg0)`
+- `private void MoveImoTama(int[] arg0)`
+- `private void MoveMusiKemuri(int[] arg0)`
+- `private void MoveFireball(int[] arg0)`
+- `private void MoveFireball2(int[] arg0)`
+- `private void MoveFireball3(int[] arg0)`
+- `private void MoveFireball4(int[] arg0)`
+- `private void MoveFireball5(int[] arg0)`
+- `private void MoveKazarifire(int[] arg0)`
+- `private void MoveDBlock(int[] arg0)`
+- `private void MoveBoss6Tama(int[] arg0)`
+- `private void DrawBakuhatu(int[] arg0)`
+- `private void DrawRing(int[] arg0)`
+- `private void DrawKira(int[] arg0)`
+- `private void DrawScore(int[] arg0)`
+- `private void DrawTama(int[] arg0)`
+- `private void DrawImoTama(int[] arg0)`
+- `private void DrawMusiKemuri(int[] arg0)`
+- `private void DrawFireball(int[] arg0)`
+- `private void DrawKazarifire(int[] arg0)`
+- `private void DrawDBlock(int[] arg0)`
+- `private void DrawBrkabe(int[] arg0)`
+- `private void DrawBoss6Tama(int[] arg0)`
+- `private void MoveAnimal(int[] arg0)`
+- `private void DrawAnimal(int[] arg0)`
+- `private void MoveObj2Debug(int[] arg0)`
+- `private void DrawObj2Debug(int[] arg0)`
+- `private void InitBoss()`
+- `private void initBossData(int arg0)`
+- `private void startBossMode()`
+- `private void endBossMode()`
+- `private boolean _BossDefault(int[] arg0)`
+- `private boolean _BossDead()`
+- `private void UpdateBossPos(int[] arg0)`
+- `private void ColliRect(int arg0, int arg1, int arg2, int arg3)`
+- `private boolean isHitBoss()`
+- `private boolean isHitBoss6()`
+- `private void boundBossHit(int arg0, int arg1, int arg2)`
+- `private void boss1_move_arai(int arg0)`
+- `private boolean moveBoss2Point(int arg0, int arg1, int arg2, int arg3)`
+- `private void boss2_move_arai(int arg0)`
+- `private void boss3_move_arai(int arg0)`
+- `private void Boss4ShotTekkyu(int arg0)`
+- `private boolean Boss4HitTekkyu(int arg0)`
+- `private void boss4_move_arai(int arg0)`
+- `private void PreInitBoss5()`
+- `private void DestroyBoss5Block()`
+- `private void MoveBoss5Block(int arg0)`
+- `private void DrawBoss5Block(boolean arg0)`
+- `private void boss5_move_arai(int arg0)`
+- `private void ColliRect2(int arg0, int[] arg1, int arg2, int arg3)`
+- `private void boss6_move_arai(int arg0)`
+- `private boolean moveNaka()`
+- `private void drawNaka()`
+- `private void drawEndingEggmanB()`
+- `private boolean moveEndingEggmanB()`
+- `package-private void setWipe(int arg0, boolean arg1, int arg2)`
+- `package-private boolean doWipe(boolean arg0)`
+- `package-private void drawWipe()`
+- `private void moveEnding()`
+- `private void drawEnding()`
+- `private void _drawEnding()`
+- `private void boss1_draw_arai(int arg0)`
+- `private void boss2_draw_arai(int arg0)`
+- `private void boss3_draw_arai(int arg0)`
+- `private void boss4_draw_arai(int arg0)`
+- `private void boss5_draw_arai(int arg0)`
+- `private void drawBoss6Piston(int arg0, int arg1, int arg2, int arg3)`
+- `private void drawBoss6Lamp(int arg0)`
+- `private void drawEggman(int arg0, int arg1, int arg2, int arg3)`
+- `private void boss6_draw_arai(int arg0)`
+- `private void AraiOfsDraw(javax.microedition.lcdui.Image arg0, int arg1, int arg2, int arg3, short[] arg4)`
+- `private void DrawBossFace(int arg0, int arg1, int arg2, int arg3, int arg4)`
+- `private void DrawBossPartsStage1(int arg0, int arg1, int arg2, int arg3)`
+- `private void DrawBossPartsStage2(int arg0, int arg1, int arg2, int arg3)`
+- `private void DrawBossPartsStage3(int arg0, int arg1, int arg2, int arg3)`
+- `private void DrawBossPartsStage4(int arg0, int arg1, int arg2, int arg3)`
+- `private void DrawBossPartsStage5(int arg0, int arg1, int arg2, int arg3)`
+- `private void DrawBossPartsStage6(int arg0, int arg1, int arg2, int arg3)`
+- `private void DrawBossParts(int arg0, int arg1, int arg2)`
+- `private void DrawBossEnd(int arg0, int arg1, int arg2)`
+- `private void AraiDrawBoss(int[] arg0)`
+- `private void startContinue()`
+- `private void moveContinue()`
+- `private void drawContinue()`
+- `private void IkeshitaLoadStageImage(int arg0)`
+- `private boolean ObjectMoveChk(int arg0, int arg1, int arg2, int arg3)`
+- `private void ring_sflag_ring_18_00_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_00_18_move_ikeshita(int arg0)`
+- `private void buranko_nflag_move_ikeshita(int arg0)`
+- `private void hashi_nflag_move_ikeshita(int arg0)`
+- `private void thashi_nflag_move_ikeshita(int arg0)`
+- `private void break_sflag_move_ikeshita(int arg0)`
+- `private void yuka_nflag_move_ikeshita(int arg0)`
+- `private void turi_nflag_move_ikeshita(int arg0)`
+- `private void toge_nflag_move_ikeshita(int arg0)`
+- `private void box_sflag_move_ikeshita(int arg0)`
+- `private void fblock_nflag_move_ikeshita(int arg0)`
+- `private void dainfla_move_ikeshita(int arg0)`
+- `private void yogan2_sflag_move_ikeshita(int arg0)`
+- `private void myogan_nflag_move_ikeshita(int arg0)`
+- `private void switch2_nflag_move_ikeshita(int arg0)`
+- `private void shima_nflag_move_ikeshita(int arg0)`
+- `private void dai2_nflag_move_ikeshita(int arg0)`
+- `private void brkabe_sflag_move_ikeshita(int arg0)`
+- `private void pedal_nflag_move_ikeshita(int arg0)`
+- `private void break2_nflag_move_ikeshita(int arg0)`
+- `private void step_nflag_move_ikeshita(int arg0)`
+- `private void fun_nflag_move_ikeshita(int arg0)`
+- `private void belt_nflag_move_ikeshita(int arg0)`
+- `private void pata_nflag_move_ikeshita(int arg0)`
+- `private void fire6_nflag_move_ikeshita(int arg0)`
+- `private void bryuka_nflag_move_ikeshita(int arg0)`
+- `private void mawaru_nflag_move_ikeshita(int arg0)`
+- `private void yukai_nflag_move_ikeshita(int arg0)`
+- `private void door_nflag_move_ikeshita(int arg0)`
+- `private void yukae_nflag_move_ikeshita(int arg0)`
+- `private void dai4_nflag_move_ikeshita(int arg0)`
+- `private void ele_nflag_move_ikeshita(int arg0)`
+- `private void beltc_nflag_move_ikeshita(int arg0)`
+- `private void noko_nflag_move_ikeshita(int arg0)`
+- `private void save_sflag_move_ikeshita(int arg0)`
+- `private void kageb_nflag_move_ikeshita(int arg0)`
+- `private void item_nflag_move_ikeshita(int arg0)`
+- `private void item_sflag_move_ikeshita(int arg0)`
+- `private void gole_nflag_move_ikeshita(int arg0)`
+- `private void bten_nflag_move_ikeshita(int arg0)`
+- `private void bten_sflag_move_ikeshita(int arg0)`
+- `private void bigring_nflag_move_ikeshita(int arg0)`
+- `private void scoli_nflag_move_ikeshita(int arg0)`
+- `private void shooter_nflag_move_ikeshita(int arg0)`
+- `private void masin_nflag_move_ikeshita(int arg0)`
+- `private void bobin_sflag_move_ikeshita(int arg0)`
+- `private void jyama_nflag_move_ikeshita(int arg0)`
+- `private void fetama_nflag_move_ikeshita(int arg0)`
+- `private void tekyu_nflag_move_ikeshita(int arg0)`
+- `private void dai2_sflag_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_m10_10_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_10_10_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_20_20_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_10_00_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_20_00_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_00_10_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_00_20_move_ikeshita(int arg0)`
+- `private void elev_nflag_80_move_ikeshita(int arg0)`
+- `private void elev_nflag_move_ikeshita(int arg0)`
+- `private void mfire_nflag_move_ikeshita(int arg0)`
+- `private void yoganc_nflag_move_ikeshita(int arg0)`
+- `private void ochi_nflag_move_ikeshita(int arg0)`
+- `private void yari_sflag_move_ikeshita(int arg0)`
+- `private void kazari_sflag_move_ikeshita(int arg0)`
+- `private void dai3_nflag_move_ikeshita(int arg0)`
+- `private void kassya_nflag_move_ikeshita(int arg0)`
+- `private void shima2_nflag_move_ikeshita(int arg0)`
+- `private void bou_nflag_move_ikeshita(int arg0)`
+- `private void ring_sflag_ring_18_00_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_00_18_draw_ikeshita(int arg0)`
+- `private void buranko_nflag_draw_ikeshita(int arg0)`
+- `private void hashi_nflag_draw_ikeshita(int arg0)`
+- `private void thashi_nflag_draw_ikeshita(int arg0)`
+- `private void break_sflag_draw_ikeshita(int arg0)`
+- `private void yuka_nflag_draw_ikeshita(int arg0)`
+- `private void turi_nflag_draw_ikeshita(int arg0)`
+- `private void toge_nflag_draw_ikeshita(int arg0)`
+- `private void box_sflag_draw_ikeshita(int arg0)`
+- `private void fblock_nflag_draw_ikeshita(int arg0)`
+- `private void dainfla_draw_ikeshita(int arg0)`
+- `private void yogan2_sflag_draw_ikeshita(int arg0)`
+- `private void myogan_nflag_draw_ikeshita(int arg0)`
+- `private void switch2_nflag_draw_ikeshita(int arg0)`
+- `private void shima_nflag_draw_ikeshita(int arg0)`
+- `private void dai2_nflag_draw_ikeshita(int arg0)`
+- `private void brkabe_sflag_draw_ikeshita(int arg0)`
+- `private void pedal_nflag_draw_ikeshita(int arg0)`
+- `private void break2_nflag_draw_ikeshita(int arg0)`
+- `private void step_nflag_draw_ikeshita(int arg0)`
+- `private void fun_nflag_draw_ikeshita(int arg0)`
+- `private void pata_nflag_draw_ikeshita(int arg0)`
+- `private void fire6_nflag_draw_ikeshita(int arg0)`
+- `private void bryuka_nflag_draw_ikeshita(int arg0)`
+- `private void mawaru_nflag_draw_ikeshita(int arg0)`
+- `private void yukai_nflag_draw_ikeshita(int arg0)`
+- `private void door_nflag_draw_ikeshita(int arg0)`
+- `private void yukae_nflag_draw_ikeshita(int arg0)`
+- `private void dai4_nflag_draw_ikeshita(int arg0)`
+- `private void ele_nflag_draw_ikeshita(int arg0)`
+- `private void beltc_nflag_draw_ikeshita(int arg0)`
+- `private void noko_nflag_draw_ikeshita(int arg0)`
+- `private void save_sflag_draw_ikeshita(int arg0)`
+- `private void kageb_nflag_draw_ikeshita(int arg0)`
+- `private void item_nflag_draw_ikeshita(int arg0)`
+- `private void item_sflag_draw_ikeshita(int arg0)`
+- `private void gole_nflag_draw_ikeshita(int arg0)`
+- `private void bten_nflag_draw_ikeshita(int arg0)`
+- `private void bten_sflag_draw_ikeshita(int arg0)`
+- `private void bigring_nflag_draw_ikeshita(int arg0)`
+- `private void masin_nflag_draw_ikeshita(int arg0)`
+- `private void bobin_sflag_draw_ikeshita(int arg0)`
+- `private void jyama_nflag_draw_ikeshita(int arg0)`
+- `private void fetama_nflag_draw_ikeshita(int arg0)`
+- `private static void vect(int arg0, int arg1, int arg2)`
+- `private void tekyu_nflag_draw_ikeshita(int arg0)`
+- `private void dai2_sflag_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_m10_10_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_10_10_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_20_20_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_10_00_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_20_00_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_00_10_draw_ikeshita(int arg0)`
+- `private void ring_sflag_ring_00_20_draw_ikeshita(int arg0)`
+- `private void elev_nflag_80_draw_ikeshita(int arg0)`
+- `private void elev_nflag_draw_ikeshita(int arg0)`
+- `private void mfire_nflag_draw_ikeshita(int arg0)`
+- `private void yoganc_nflag_draw_ikeshita(int arg0)`
+- `private void ochi_nflag_draw_ikeshita(int arg0)`
+- `private void yari_sflag_draw_ikeshita(int arg0)`
+- `private void kazari_sflag_draw_ikeshita(int arg0)`
+- `private void dai3_nflag_draw_ikeshita(int arg0)`
+- `private void kassya_nflag_draw_ikeshita(int arg0)`
+- `private void shima2_nflag_draw_ikeshita(int arg0)`
+- `private void bou_nflag_draw_ikeshita(int arg0)`
+- `static initializer`
+
+### Called Resources, If Identifiable
+
+- Line 847: `logo.png` via `this.m_imgCmd[MainCanvas.LOGO] = this.createImage("/logo.png");`
+- Line 848: `logoline.png` via `this.m_imgCmd[MainCanvas.LOGOLINE] = this.createImage("/logoline.png");`
+- Line 849: `Systxt.png` via `this.m_imgCmd[MainCanvas.SYSTXT] = this.createImage("/Systxt.png");`
+- Line 850: `Systxt2.png` via `this.m_imgCmd[MainCanvas.SYSTXT2] = this.createImage("/Systxt2.png");`
+- Line 851: `windou_ring.png` via `this.m_imgCmd[MainCanvas.WINDOW_RING] = this.createImage("/windou_ring.png");`
+- Line 852: `windou_time.png` via `this.m_imgCmd[MainCanvas.WINDOW_TIME] = this.createImage("/windou_time.png");`
+- Line 853: `windou_zanki.png` via `this.m_imgCmd[MainCanvas.WINDOW_ZANKI] = this.createImage("/windou_zanki.png");`
+- Line 854: `windou_suuji.png` via `this.m_imgCmd[MainCanvas.WINDOU_SUUJI] = this.createImage("/windou_suuji.png");`
+- Line 855: `score.png` via `this.m_imgCmd[MainCanvas.SYSSCORE] = this.createImage("/score.png");`
+- Line 856: `gameover.png` via `this.m_imgCmd[MainCanvas.GAMEOVER] = this.createImage("/gameover.png");`
+- Line 857: `timeover.png` via `this.m_imgCmd[MainCanvas.TIMEOVER] = this.createImage("/timeover.png");`
+- Line 862: `t_cur1.png` via `this.m_imgCmd[MainCanvas.T_CUR1] = this.createImage("/t_cur1.png");`
+- Line 863: `t_cur2.png` via `this.m_imgCmd[MainCanvas.T_CUR2] = this.createImage("/t_cur2.png");`
+- Line 866: `scddirtbl.blt` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/scddirtbl.blt"));`
+- Line 2157: `/zone`, `.bmd` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/zone" + (this.zoneNumber + 1) + ".bmd"));`
+- Line 2397: `/zone`, `.blt` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/zone" + n + ".blt"));`
+- Line 2400: `/MapLzone`, `.blt` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/MapLzone" + n + ".blt"));`
+- Line 2403: `/ZONE`, `ACT.act` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/ZONE" + n + "ACT.act"));`
+- Line 2413: `scdtblwk.scd` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/scdtblwk.scd"));`
+- Line 2416: `blkcol.bct` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/blkcol.bct"));`
+- Line 2419: `ring.png` via `this.m_imgObj[0] = this.createImage("/ring.png");`
+- Line 2420: `save.png` via `this.m_imgObj[36] = this.createImage("/save.png");`
+- Line 2421: `item.png` via `this.m_imgObj[42] = this.createImage("/item.png");`
+- Line 2422: `effect.png` via `this.m_imgObj[109] = this.createImage("/effect.png");`
+- Line 2423: `toge.png` via `this.m_imgObj[9] = this.createImage("/toge.png");`
+- Line 2425: `buranko.png` via `this.m_imgObj[3] = this.createImage("/buranko.png");`
+- Line 2428: `masin.png` via `this.m_imgObj[55] = this.createImage("/masin.png");`
+- Line 2430: `sjump.png` via `this.m_imgObj[MainCanvas.SJUMP] = this.createImage("/sjump.png");`
+- Line 2431: `sjump2.png` via `this.m_imgObj[1] = this.createImage("/sjump2.png");`
+- Line 2433: `shima5.png` via `this.m_imgObj[16] = this.createImage("/shima5.png");`
+- Line 2435: `shima.png` via `this.m_imgObj[16] = this.createImage("/shima.png");`
+- Line 2438: `hashi.png` via `this.m_imgObj[5] = this.createImage("/hashi.png");`
+- Line 2439: `jyama.png` via `this.m_imgObj[58] = this.createImage("/jyama.png");`
+- Line 2440: `break.png` via `this.m_imgObj[6] = this.createImage("/break.png");`
+- Line 2441: `kageb.png` via `this.m_imgObj[37] = this.createImage("/kageb.png");`
+- Line 2445: `dai3.png` via `this.m_imgObj[83] = this.createImage("/dai3.png");`
+- Line 2446: `dai2_0xE0.png` via `this.m_imgObj[107] = this.createImage("/dai2_0xE0.png");`
+- Line 2447: `dai2_0xF0.png` via `this.m_imgObj[108] = this.createImage("/dai2_0xF0.png");`
+- Line 2448: `kazari.png` via `this.m_imgObj[82] = this.createImage("/kazari.png");`
+- Line 2449: `kassya.png` via `this.m_imgObj[88] = this.createImage("/kassya.png");`
+- Line 2450: `mizu.png` via `this.m_imgObj[84] = this.createImage("/mizu.png");`
+- Line 2451: `mizu_0x09.png` via `this.m_imgObj[110] = this.createImage("/mizu_0x09.png");`
+- Line 2452: `yari.png` via `this.m_imgObj[80] = this.createImage("/yari.png");`
+- Line 2453: `awa.png` via `this.m_imgObj[85] = this.createImage("/awa.png");`
+- Line 2454: `objawa.png` via `this.m_imgObj[104] = this.createImage("/objawa.png");`
+- Line 2455: `dai3_0x27.png` via `this.m_imgObj[105] = this.createImage("/dai3_0x27.png");`
+- Line 2456: `dai3_0x13.png` via `this.m_imgObj[106] = this.createImage("/dai3_0x13.png");`
+- Line 2457: `bou.png` via `this.m_imgObj[91] = this.createImage("/bou.png");`
+- Line 2458: `ben.png` via `this.m_imgObj[92] = this.createImage("/ben.png");`
+- Line 2459: `water.png` via `this.m_imgObj[5] = this.createImage("/water.png");`
+- Line 2460: `water2.png` via `this.m_imgObj[111] = this.createImage("/water2.png");`
+- Line 2462: `z_dai3.png` via `this.m_imgObj[83] = this.createImage("/z_dai3.png");`
+- Line 2463: `z_dai3_0x27.png` via `this.m_imgObj[105] = this.createImage("/z_dai3_0x27.png");`
+- Line 2464: `z_dai3_0x13.png` via `this.m_imgObj[106] = this.createImage("/z_dai3_0x13.png");`
+- Line 2465: `z_dai2_0xE0.png` via `this.m_imgObj[107] = this.createImage("/z_dai2_0xE0.png");`
+- Line 2466: `z_dai2_0xF0.png` via `this.m_imgObj[108] = this.createImage("/z_dai2_0xF0.png");`
+- Line 2467: `z_kazari.png` via `this.m_imgObj[82] = this.createImage("/z_kazari.png");`
+- Line 2468: `kassya.png` via `this.m_imgObj[88] = this.createImage("/kassya.png");`
+- Line 2469: `z_mizu.png` via `this.m_imgObj[84] = this.createImage("/z_mizu.png");`
+- Line 2470: `mizu_0x09.png` via `this.m_imgObj[110] = this.createImage("/mizu_0x09.png");`
+- Line 2471: `yari.png` via `this.m_imgObj[80] = this.createImage("/yari.png");`
+- Line 2472: `awa.png` via `this.m_imgObj[85] = this.createImage("/awa.png");`
+- Line 2473: `objawa.png` via `this.m_imgObj[104] = this.createImage("/objawa.png");`
+- Line 2474: `bou.png` via `this.m_imgObj[91] = this.createImage("/bou.png");`
+- Line 2475: `z_ben.png` via `this.m_imgObj[92] = this.createImage("/z_ben.png");`
+- Line 2476: `water.png` via `this.m_imgObj[5] = this.createImage("/water.png");`
+- Line 2477: `water2.png` via `this.m_imgObj[111] = this.createImage("/water2.png");`
+- Line 2481: `ochi.png` via `this.m_imgObj[79] = this.createImage("/ochi.png");`
+- Line 2482: `dai.png` via `this.m_imgObj[54] = this.createImage("/dai.png");`
+- Line 2483: `turi.png` via `this.m_imgObj[8] = this.createImage("/turi.png");`
+- Line 2484: `turi2.png` via `this.m_imgObj[94] = this.createImage("/turi2.png");`
+- Line 2485: `turi3.png` via `this.m_imgObj[95] = this.createImage("/turi3.png");`
+- Line 2486: `yogan2.png` via `this.m_imgObj[13] = this.createImage("/yogan2.png");`
+- Line 2487: `yogan22.png` via `this.m_imgObj[99] = this.createImage("/yogan22.png");`
+- Line 2488: `fblock.png` via `this.m_imgObj[11] = this.createImage("/fblock.png");`
+- Line 2489: `yoganc.png` via `this.m_imgObj[77] = this.createImage("/yoganc.png");`
+- Line 2490: `myogan.png` via `this.m_imgObj[14] = this.createImage("/myogan.png");`
+- Line 2491: `myogan2.png` via `this.m_imgObj[98] = this.createImage("/myogan2.png");`
+- Line 2492: `yuka.png` via `this.m_imgObj[7] = this.createImage("/yuka.png");`
+- Line 2493: `bryuka.png` via `this.m_imgObj[27] = this.createImage("/bryuka.png");`
+- Line 2495: `switch.png` via `this.m_imgObj[15] = this.createImage("/switch.png");`
+- Line 2497: `fun.png` via `this.m_imgObj[22] = this.createImage("/fun.png");`
+- Line 2498: `brkabe.png` via `this.m_imgObj[MainCanvas.BRKABE] = this.createImage("/brkabe.png");`
+- Line 2499: `pedal.png` via `this.m_imgObj[MainCanvas.PEDAL] = this.createImage("/pedal.png");`
+- Line 2500: `step.png` via `this.m_imgObj[MainCanvas.STEP] = this.createImage("/step.png");`
+- Line 2501: `elev.png` via `this.m_imgObj[73] = this.createImage("/elev.png");`
+- Line 2502: `sisoo.png` via `this.m_imgObj[23] = this.createImage("/sisoo.png");`
+- Line 2505: `dai2.png` via `this.m_imgObj[MainCanvas.DAI2] = this.createImage("/dai2.png");`
+- Line 2506: `signal.png` via `this.m_imgObj[61] = this.createImage("/signal.png");`
+- Line 2507: `bobin.png` via `this.m_imgObj[56] = this.createImage("/bobin.png");`
+- Line 2510: `paka2.png` via `this.m_imgObj[MainCanvas.PATA] = this.createImage("/paka2.png");`
+- Line 2511: `ele.png` via `this.m_imgObj[33] = this.createImage("/ele.png");`
+- Line 2512: `mawaru.png` via `this.m_imgObj[28] = this.createImage("/mawaru.png");`
+- Line 2513: `yukai.png` via `this.m_imgObj[29] = this.createImage("/yukai.png");`
+- Line 2514: `dai4.png` via `this.m_imgObj[32] = this.createImage("/dai4.png");`
+- Line 2515: `dai_.png` via `this.m_imgObj[12] = this.createImage("/dai_.png");`
+- Line 2517: `fire6.png` via `this.m_imgObj[26] = this.createImage("/fire6.png");`
+- Line 2519: `dai4_.png` via `this.m_imgObj[83] = this.createImage("/dai4_.png");`
+- Line 2521: `tama.png` via `this.m_imgObj[96] = this.createImage("/tama.png");`
+- Line 2522: `bakuhatu.png` via `this.m_imgObj[97] = this.createImage("/bakuhatu.png");`
+- Line 2537: `z_zone2.png`, `/zone`, `.png` via `m_imgMimg = n == 2 && this.stageNumber == 3 ? this.createImage("/z_zone2.png") : this.createImage("/zone" + n + ".png");`
+- Line 2539: `sonic.png` via `this.m_imgCmd[MainCanvas.SONIC_N] = this.createImage("/sonic.png");`
+- Line 2542: `sonic_s.png` via `this.m_imgCmd[MainCanvas.SONIC_S] = this.createImage("/sonic_s.png");`
+- Line 5686: `(dynamic/implicit)` via `public Image createImage(String string) {`
+- Line 5692: `(dynamic/implicit)` via `return Image.createImage((String)string);`
+- Line 5695: `(dynamic/implicit)` via `return this.createImage(string);`
+- Line 7032: `/zone`, `.bmd` via `indata = new DataInputStream(this.getClass().getResourceAsStream("/zone" + (this.zoneNumber + 1) + ".bmd"));`
+- Line 7073: `(dynamic/implicit)` via `inputStream = this.getClass().getResourceAsStream("/" + string);`
+- Line 7667: `t_license1.png` via `MainCanvas.m_imgImage[0] = this.createImage("/t_license1.png");`
+- Line 7668: `t_license2.png` via `MainCanvas.m_imgImage[1] = this.createImage("/t_license2.png");`
+- Line 7671: `t_title.png` via `MainCanvas.m_imgImage[0] = this.createImage("/t_title.png");`
+- Line 7672: `t_cur1.png` via `MainCanvas.m_imgImage[1] = this.createImage("/t_cur1.png");`
+- Line 7673: `t_cur2.png` via `MainCanvas.m_imgImage[2] = this.createImage("/t_cur2.png");`
+- Line 7674: `ring.png` via `MainCanvas.m_imgImage[4] = this.createImage("/ring.png");`
+- Line 7675: `title_bg.png` via `MainCanvas.m_imgImage[5] = this.createImage("/title_bg.png");`
+- Line 7676: `t_matome.png` via `MainCanvas.m_imgImage[6] = this.createImage("/t_matome.png");`
+- Line 7699: `/lang_`, `.txt` via `in = this.getClass().getResourceAsStream("/lang_" + m_nConfigValue[3] + ".txt");`
+- Line 7720: `/manual_`, `.txt` via `in = this.getClass().getResourceAsStream("/manual_" + m_nConfigValue[3] + ".txt");`
+- Line 8411: `/bgm/`, `.mmf` via `this.is1 = this.getClass().getResourceAsStream("/bgm/" + string + ".mmf");`
+- Line 8416: `(dynamic/implicit)` via `this.player1 = Manager.createPlayer((InputStream)this.is1, (String)"application/x-smaf");`
+- Line 8787: `animal.png` via `this.m_imgObj[100] = this.createImage("/animal.png");`
+- Line 8790: `musi.png` via `this.m_imgObj[41] = this.createImage("/musi.png");`
+- Line 8791: `hachi.png` via `this.m_imgObj[40] = this.createImage("/hachi.png");`
+- Line 8792: `fish.png` via `this.m_imgObj[86] = this.createImage("/fish.png");`
+- Line 8793: `kamere.png` via `this.m_imgObj[39] = this.createImage("/kamere.png");`
+- Line 8794: `kani.png` via `this.m_imgObj[57] = this.createImage("/kani.png");`
+- Line 8798: `fire.png` via `this.m_imgObj[101] = this.createImage("/fire.png");`
+- Line 8799: `mogura.png` via `this.m_imgObj[81] = this.createImage("/mogura.png");`
+- Line 8800: `fish2.png` via `this.m_imgObj[87] = this.createImage("/fish2.png");`
+- Line 8801: `uni.png` via `this.m_imgObj[74] = this.createImage("/uni.png");`
+- Line 8805: `fire.png` via `this.m_imgObj[101] = this.createImage("/fire.png");`
+- Line 8806: `hachi.png` via `this.m_imgObj[40] = this.createImage("/hachi.png");`
+- Line 8807: `imo.png` via `this.m_imgObj[49] = this.createImage("/imo.png");`
+- Line 8808: `bat.png` via `this.m_imgObj[78] = this.createImage("/bat.png");`
+- Line 8812: `fire.png` via `this.m_imgObj[101] = this.createImage("/fire.png");`
+- Line 8813: `brobo.png` via `this.m_imgObj[50] = this.createImage("/brobo.png");`
+- Line 8814: `uni.png` via `this.m_imgObj[74] = this.createImage("/uni.png");`
+- Line 8818: `fire.png` via `this.m_imgObj[101] = this.createImage("/fire.png");`
+- Line 8819: `hachi.png` via `this.m_imgObj[40] = this.createImage("/hachi.png");`
+- Line 8820: `kani.png` via `this.m_imgObj[57] = this.createImage("/kani.png");`
+- Line 8821: `yado.png` via `this.m_imgObj[71] = this.createImage("/yado.png");`
+- Line 8822: `aruma.png` via `this.m_imgObj[70] = this.createImage("/aruma.png");`
+- Line 8823: `block.png` via `this.m_imgObj[102] = this.createImage("/block.png");`
+- Line 8828: `fire.png` via `this.m_imgObj[101] = this.createImage("/fire.png");`
+- Line 8829: `imo.png` via `this.m_imgObj[49] = this.createImage("/imo.png");`
+- Line 8830: `brobo.png` via `this.m_imgObj[50] = this.createImage("/brobo.png");`
+- Line 8831: `buta.png` via `this.m_imgObj[51] = this.createImage("/buta.png");`
+- Line 11886: `boss.png` via `this.m_imgObj[120] = this.createImage("boss.png");`
+- Line 11887: `bossball.png` via `this.m_imgObj[121] = this.createImage("bossball.png");`
+- Line 11892: `boss.png` via `this.m_imgObj[120] = this.createImage("boss.png");`
+- Line 11899: `boss.png` via `this.m_imgObj[120] = this.createImage("boss.png");`
+- Line 11900: `fire.png` via `this.m_imgObj[131] = this.createImage("fire.png");`
+- Line 11907: `boss.png` via `this.m_imgObj[120] = this.createImage("boss.png");`
+- Line 11929: `boss.png` via `this.m_imgObj[120] = this.createImage("boss.png");`
+- Line 11938: `ring.png` via `this.m_imgObj[0] = this.createImage("/ring.png");`
+- Line 11939: `bakuhatu.png` via `this.m_imgObj[97] = this.createImage("/bakuhatu.png");`
+- Line 11940: `beltcon.png` via `this.m_imgObj[84] = this.createImage("/beltcon.png");`
+- Line 11941: `boss.png` via `this.m_imgObj[120] = this.createImage("boss.png");`
+- Line 11942: `boss6.png` via `this.m_imgObj[145] = this.createImage("boss6.png");`
+- Line 11943: `eggman.png` via `this.m_imgObj[146] = this.createImage("eggman.png");`
+- Line 11944: `boss2.png` via `this.m_imgObj[147] = this.createImage("boss2.png");`
+- Line 13532: `animal.png` via `this.m_imgObj[100] = this.createImage("/animal.png");`
+- Line 13533: `ED_00.png` via `this.m_imgObj[121] = this.createImage("/ED_00.png");`
+- Line 13534: `ED3.png` via `this.m_imgObj[122] = this.createImage("/ED3.png");`
+- Line 13535: `endegg_b.png` via `this.m_imgObj[123] = this.createImage("/endegg_b.png");`
+- Line 13536: `t_license3.png` via `this.m_imgObj[124] = this.createImage("/t_license3.png");`
+- Line 14181: `continue.png` via `this.m_imgObj[121] = this.createImage("/continue.png");`
+- Line 14293: `buranko_.png` via `this.m_imgObj[MainCanvas.BURANKO] = this.createImage("/buranko_.png");`
+- Line 14294: `noko.png` via `this.m_imgObj[35] = this.createImage("/noko.png");`
+- Line 14295: `door.png` via `this.m_imgObj[MainCanvas.DOOR] = this.createImage("/door.png");`
+- Line 14296: `beltc.png` via `this.m_imgObj[MainCanvas.BELTC] = this.createImage("/beltc.png");`
+- Line 14297: `yukae.png` via `this.m_imgObj[31] = this.createImage("/yukae.png");`
+- Line 14298: `yukai.png` via `this.m_imgObj[29] = this.createImage("/yukai.png");`
+- Line 14299: `beltcon.png` via `this.m_imgObj[84] = this.createImage("/beltcon.png");`
+- Line 14300: `bryuka_sc.png` via `this.m_imgObj[27] = this.createImage("/bryuka_sc.png");`
+- Line 14303: `thashi.png` via `this.m_imgObj[4] = this.createImage("/thashi.png");`
+- Line 14304: `brkabe_g.png` via `this.m_imgObj[18] = this.createImage("/brkabe_g.png");`
+- Line 14307: `buranko_m.png` via `this.m_imgObj[MainCanvas.BURANKO] = this.createImage("/buranko_m.png");`
+- Line 14310: `mfire.png` via `this.m_imgObj[75] = this.createImage("/mfire.png");`
+- Line 14311: `buranko_s.png` via `this.m_imgObj[MainCanvas.BURANKO] = this.createImage("/buranko_s.png");`
+- Line 14314: `dai_la.png` via `this.m_imgObj[12] = this.createImage("/dai_la.png");`
+- Line 14317: `switch2.png` via `this.m_imgObj[15] = this.createImage("/switch2.png");`
+- Line 14320: `z_dai4_l.png` via `this.m_imgObj[32] = this.createImage("/z_dai4_l.png");`
+- Line 14321: `z_dai_la.png` via `this.m_imgObj[12] = this.createImage("/z_dai_la.png");`
+- Line 14324: `dai2_3.png` via `this.m_imgObj[107] = this.createImage("/dai2_3.png");`
+- Line 14326: `gole.png` via `this.m_imgObj[44] = this.createImage("/gole.png");`
+- Line 14327: `tekyu.png` via `this.m_imgObj[60] = this.createImage("/tekyu.png");`
+- Line 14328: `bten.png` via `this.m_imgObj[45] = this.createImage("/bten.png");`
+
+### Relationships To Other Classes
+
+- references local classes: DistantBg, sonic
+- has fields typed as: sonic
+- External API/class references: `java.io.ByteArrayOutputStream`, `java.io.DataInputStream`, `java.io.IOException`, `java.io.InputStream`, `java.lang.Class`, `java.lang.Exception`, `java.lang.InterruptedException`, `java.lang.Math`, `java.lang.Object`, `java.lang.Runnable`, `java.lang.String`, `java.lang.StringBuffer`, `java.lang.System`, `java.lang.Thread`, `java.lang.Throwable`, `java.util.Random`, `javax.microedition.lcdui.Command`, `javax.microedition.lcdui.CommandListener`, `javax.microedition.lcdui.Displayable`, `javax.microedition.lcdui.Font`, `javax.microedition.lcdui.Graphics`, `javax.microedition.lcdui.Image`, `javax.microedition.lcdui.game.GameCanvas`, `javax.microedition.media.Manager`, `javax.microedition.media.MediaException`, `javax.microedition.media.Player`, `javax.microedition.media.PlayerListener`, `javax.microedition.media.control.VolumeControl`, `javax.microedition.rms.RecordStore`
+
+## sonic
+
+- Source file: `src/sonic.java`
+- Original class file: `original/sonicjar/sonic.class`
+- Access: `public`
+- Class file version: `46.0 (Java 1.2)`
+- Superclass: `javax.microedition.midlet.MIDlet`
+- Interfaces: `java.lang.Runnable`
+- Suspected purpose: MIDlet entry point and lifecycle wrapper. It creates MainCanvas, sets it as the display, starts the game thread, exposes vibration, and delegates exit handling.
+- Confidence level: `High`
+
+### Fields
+
+- `private MainCanvas main`
+- `public static boolean LoadOK`
+- `private javax.microedition.lcdui.Display display`
+
+### Constructors
+
+- `public sonic()`
+
+### Methods
+
+- `public void vibrate(int arg0)`
+- `public void startApp()`
+- `public void run()`
+- `public void pauseApp()`
+- `public void destroyApp(boolean arg0)`
+- `public java.lang.String GetAppProperty(java.lang.String arg0)`
+- `public void doExit()`
+
+### Called Resources, If Identifiable
+
+- `(none directly identified)`
+
+### Relationships To Other Classes
+
+- references local classes: MainCanvas
+- has fields typed as: MainCanvas
+- External API/class references: `java.lang.Exception`, `java.lang.Runnable`, `java.lang.Thread`, `java.lang.Throwable`, `javax.microedition.lcdui.Display`, `javax.microedition.midlet.MIDlet`
